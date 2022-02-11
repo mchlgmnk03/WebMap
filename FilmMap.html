@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5688594e96c446409448ef5144cdc1b4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css"/>
+    
+            <style>
+                #scroll_zoom_toggler_b8d47a0c52db4064898a57d1dff08fb5 {
+                    position:absolute;
+                    width:35px;
+                    bottom:10px;
+                    height:35px;
+                    left:10px;
+                    background-color:#fff;
+                    text-align:center;
+                    line-height:35px;
+                    vertical-align: middle;
+                    }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_5688594e96c446409448ef5144cdc1b4" ></div>
+        
+    
+            <img id="scroll_zoom_toggler_b8d47a0c52db4064898a57d1dff08fb5"
+                 alt="scroll"
+                 src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/arrow-move.png"
+                 style="z-index: 999999"
+                 onclick="map_5688594e96c446409448ef5144cdc1b4.toggleScroll()">
+            </img>
+        
+</body>
+<script>    
+    
+            var map_5688594e96c446409448ef5144cdc1b4 = L.map(
+                "map_5688594e96c446409448ef5144cdc1b4",
+                {
+                    center: [40.7410861, -73.9896297241625],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fcbe4b13aa7d4ce1bfc3777c96b64bda = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5688594e96c446409448ef5144cdc1b4);
+        
+    
+            var tile_layer_cb9454173e91486a879b1072f3689d29 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_1ac0f0fb086949ea9daa280d56ec4f4a = new L.Control.MiniMap(
+                tile_layer_cb9454173e91486a879b1072f3689d29,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_5688594e96c446409448ef5144cdc1b4.addControl(mini_map_1ac0f0fb086949ea9daa280d56ec4f4a);
+        
+    
+            var tile_layer_8a81ae39b701444e96f1ec5d25d83291 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5688594e96c446409448ef5144cdc1b4);
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topright", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_5688594e96c446409448ef5144cdc1b4);
+        
+    
+            map_5688594e96c446409448ef5144cdc1b4.scrollEnabled = true;
+
+            map_5688594e96c446409448ef5144cdc1b4.toggleScroll = function() {
+                if (this.scrollEnabled) {
+                    this.scrollEnabled = false;
+                    this.scrollWheelZoom.disable();
+                } else {
+                    this.scrollEnabled = true;
+                    this.scrollWheelZoom.enable();
+                }
+            };
+            map_5688594e96c446409448ef5144cdc1b4.toggleScroll();
+        
+    
+            var feature_group_f69d7e4e236042d8b10ac92cd5248b5c = L.featureGroup(
+                {}
+            ).addTo(map_5688594e96c446409448ef5144cdc1b4);
+        
+    
+            var circle_marker_db08277406fd42709c61d9e0cf33115c = L.circleMarker(
+                [40.6526006, -73.9497211],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_9358a97443064a3399e38aed59e0a6da = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e3b849737faa4907947b06c17433b80c = $(`<div id="html_e3b849737faa4907947b06c17433b80c" style="width: 100.0%; height: 100.0%;">"LoveMyRoomie" Distance from location: 10.39</div>`)[0];
+            popup_9358a97443064a3399e38aed59e0a6da.setContent(html_e3b849737faa4907947b06c17433b80c);
+        
+
+        circle_marker_db08277406fd42709c61d9e0cf33115c.bindPopup(popup_9358a97443064a3399e38aed59e0a6da)
+        ;
+
+        
+    
+    
+            var circle_marker_5333fcdd17d84b539af98f936a45410f = L.circleMarker(
+                [37.270973, -79.9414313],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_f2b72e788aaa4b8dab2cf64421abb27c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_35b6aae9c95b47c9a4bfd329b98fcfb9 = $(`<div id="html_35b6aae9c95b47c9a4bfd329b98fcfb9" style="width: 100.0%; height: 100.0%;">"SmurTv" Distance from location: 643.31</div>`)[0];
+            popup_f2b72e788aaa4b8dab2cf64421abb27c.setContent(html_35b6aae9c95b47c9a4bfd329b98fcfb9);
+        
+
+        circle_marker_5333fcdd17d84b539af98f936a45410f.bindPopup(popup_f2b72e788aaa4b8dab2cf64421abb27c)
+        ;
+
+        
+    
+    
+            var circle_marker_35fc82d05ec14f0a8fbe64a4bd097896 = L.circleMarker(
+                [35.2272086, -80.8430827],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_8c94ba8565da415bb956d4987a33cf66 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_583d70a60e374021b8a4b027d0c18e46 = $(`<div id="html_583d70a60e374021b8a4b027d0c18e46" style="width: 100.0%; height: 100.0%;">"SmurTv" Distance from location: 857.97</div>`)[0];
+            popup_8c94ba8565da415bb956d4987a33cf66.setContent(html_583d70a60e374021b8a4b027d0c18e46);
+        
+
+        circle_marker_35fc82d05ec14f0a8fbe64a4bd097896.bindPopup(popup_8c94ba8565da415bb956d4987a33cf66)
+        ;
+
+        
+    
+    
+            var circle_marker_8b1c5cb2afe6429fa20b88e962ece6c7 = L.circleMarker(
+                [33.7489924, -84.3902644],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_b2bd2471d65f4c24ba3c59257c79daf6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_64de4c0500224e6bb0b4a658eda5f7fe = $(`<div id="html_64de4c0500224e6bb0b4a658eda5f7fe" style="width: 100.0%; height: 100.0%;">"MyCurrentSituation: Atlanta" Distance from location: 1204.15</div>`)[0];
+            popup_b2bd2471d65f4c24ba3c59257c79daf6.setContent(html_64de4c0500224e6bb0b4a658eda5f7fe);
+        
+
+        circle_marker_8b1c5cb2afe6429fa20b88e962ece6c7.bindPopup(popup_b2bd2471d65f4c24ba3c59257c79daf6)
+        ;
+
+        
+    
+    
+            var circle_marker_ca15c2eab33a414da80564865a758a33 = L.circleMarker(
+                [33.7489924, -84.3902644],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_6eebd15dfbc541b6906e9d55e89604f8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0b7c0417c7fe452381d959123acee79d = $(`<div id="html_0b7c0417c7fe452381d959123acee79d" style="width: 100.0%; height: 100.0%;">"SmurTv" Distance from location: 1204.15</div>`)[0];
+            popup_6eebd15dfbc541b6906e9d55e89604f8.setContent(html_0b7c0417c7fe452381d959123acee79d);
+        
+
+        circle_marker_ca15c2eab33a414da80564865a758a33.bindPopup(popup_6eebd15dfbc541b6906e9d55e89604f8)
+        ;
+
+        
+    
+    
+            var circle_marker_30f600134d974007ba2b131d32408f44 = L.circleMarker(
+                [35.1490215, -90.0516285],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_e4ba8f6f54594e9ea773022d4caa7212 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4d5af1c3041440b09250da93e337844b = $(`<div id="html_4d5af1c3041440b09250da93e337844b" style="width: 100.0%; height: 100.0%;">"MyCurrentSituation: Atlanta" Distance from location: 1539.17</div>`)[0];
+            popup_e4ba8f6f54594e9ea773022d4caa7212.setContent(html_4d5af1c3041440b09250da93e337844b);
+        
+
+        circle_marker_30f600134d974007ba2b131d32408f44.bindPopup(popup_e4ba8f6f54594e9ea773022d4caa7212)
+        ;
+
+        
+    
+    
+            var circle_marker_b89162a834394125a2a26f4254facb0f = L.circleMarker(
+                [61.0666922, -107.991707],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_ccfc47acfbaa4d35ae37c757fb488ba0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_43b3fb4ff7fa4d79a4e6e9b1d0cb081e = $(`<div id="html_43b3fb4ff7fa4d79a4e6e9b1d0cb081e" style="width: 100.0%; height: 100.0%;">"VanLifeAttila" Distance from location: 3224.62</div>`)[0];
+            popup_ccfc47acfbaa4d35ae37c757fb488ba0.setContent(html_43b3fb4ff7fa4d79a4e6e9b1d0cb081e);
+        
+
+        circle_marker_b89162a834394125a2a26f4254facb0f.bindPopup(popup_ccfc47acfbaa4d35ae37c757fb488ba0)
+        ;
+
+        
+    
+    
+            var circle_marker_7ad3865f970e4a749cd54ae6be2718c1 = L.circleMarker(
+                [51.0460954, -114.065465],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_1b204ecf679741deb5f868e5f223e0f7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1f3d3f7ac1ee43f2894baf8e844f752e = $(`<div id="html_1f3d3f7ac1ee43f2894baf8e844f752e" style="width: 100.0%; height: 100.0%;">"VanLifeAttila" Distance from location: 3266.59</div>`)[0];
+            popup_1b204ecf679741deb5f868e5f223e0f7.setContent(html_1f3d3f7ac1ee43f2894baf8e844f752e);
+        
+
+        circle_marker_7ad3865f970e4a749cd54ae6be2718c1.bindPopup(popup_1b204ecf679741deb5f868e5f223e0f7)
+        ;
+
+        
+    
+    
+            var circle_marker_31910d5a17f548aeb1afb126344526c5 = L.circleMarker(
+                [55.001251, -115.002136],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_e2fdef5ea1944401b21f004afd14b8b1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4747c5dcb0ff4266a59d070fcbf5f50d = $(`<div id="html_4747c5dcb0ff4266a59d070fcbf5f50d" style="width: 100.0%; height: 100.0%;">"VanLifeAttila" Distance from location: 3387.84</div>`)[0];
+            popup_e2fdef5ea1944401b21f004afd14b8b1.setContent(html_4747c5dcb0ff4266a59d070fcbf5f50d);
+        
+
+        circle_marker_31910d5a17f548aeb1afb126344526c5.bindPopup(popup_e2fdef5ea1944401b21f004afd14b8b1)
+        ;
+
+        
+    
+    
+            var circle_marker_306b632e3c4f48ad8866453db64b7a52 = L.circleMarker(
+                [50.8270107, -118.98552905060103],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f69d7e4e236042d8b10ac92cd5248b5c);
+        
+    
+        var popup_7b39cd8cc3ae4ca0b367b694ac2ffbd7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4791f73fb6f745299d9b93b2cc83abd2 = $(`<div id="html_4791f73fb6f745299d9b93b2cc83abd2" style="width: 100.0%; height: 100.0%;">"VanLifeAttila" Distance from location: 3611.0</div>`)[0];
+            popup_7b39cd8cc3ae4ca0b367b694ac2ffbd7.setContent(html_4791f73fb6f745299d9b93b2cc83abd2);
+        
+
+        circle_marker_306b632e3c4f48ad8866453db64b7a52.bindPopup(popup_7b39cd8cc3ae4ca0b367b694ac2ffbd7)
+        ;
+
+        
+    
+    
+            var layer_control_6dd4f6a51c784541a091515c65f2aaed = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_fcbe4b13aa7d4ce1bfc3777c96b64bda,
+                    "cartodbpositron" : tile_layer_8a81ae39b701444e96f1ec5d25d83291,
+                },
+                overlays :  {
+                    "Nearest Film Scenes" : feature_group_f69d7e4e236042d8b10ac92cd5248b5c,
+                },
+            };
+            L.control.layers(
+                layer_control_6dd4f6a51c784541a091515c65f2aaed.base_layers,
+                layer_control_6dd4f6a51c784541a091515c65f2aaed.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topleft"}
+            ).addTo(map_5688594e96c446409448ef5144cdc1b4);
+            tile_layer_8a81ae39b701444e96f1ec5d25d83291.remove();
+        
+</script>
